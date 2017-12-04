@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import Day from './Day';
 import './Calendar.css';
+import surpriseForDay from './surprises';
 
 class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      days: [...Array(26).keys()],
-      currentDay: new Date().getDate(),
+      days: [...Array(26).keys()]
     };
   }
 
   handleClick(i) {
-    if (i <= this.state.currentDay) {
+    const currentDay = new Date().getDate();
+    if (i <= currentDay) {
       const days = this.state.days.slice();
-      days[i] = 'opened';
+      days[i] = surpriseForDay(i);
       this.setState({days: days})
     }
   }
@@ -31,7 +32,7 @@ class Calendar extends Component {
   render() {
     return (
       <div>
-        <div className="month">{'December'}</div>
+        <div className="month">{"Click on the square matching today's date each day in December for a little holiday surprise!"}</div>
         <div className="calendar-row">
           {this.renderDay(1)}
           {this.renderDay(2)}
