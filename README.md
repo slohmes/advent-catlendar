@@ -1,6 +1,6 @@
-# Advent Cat-lendar 2017
+# Advent Cat-lendar
 
-This app displays a cute Christmassy cat picture for each day in December!
+A web app that reveals a new cute Christmassy cat picture for each day in December.
 
 All of the image links are located inside /src/surprises.js.
 
